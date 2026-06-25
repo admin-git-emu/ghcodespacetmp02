@@ -1,0 +1,15 @@
+# Core Azure SDK + tooling for Python cloud work.
+# Pin versions before sharing with a team for reproducible builds.
+azure-identity
+azure-mgmt-resource
+azure-storage-blob
+azure-keyvault-secrets
+
+# App / API starter
+fastapi
+uvicorn[standard]
+
+# Dev quality
+pytest
+ruff
+black
