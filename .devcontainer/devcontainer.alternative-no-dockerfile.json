@@ -1,8 +1,8 @@
 {
-  "name": "MarkItDown Dev Environment",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "//": "ALTERNATIVE setup — no Dockerfile. Rename this file to devcontainer.json to use it.",
+  "//install": "Uses onCreateCommand so the install is cached in prebuilds. Lighter to maintain, but apt system packages (ffmpeg/poppler) are not included.",
+  "name": "MarkItDown Dev Environment (no Dockerfile)",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/azure-cli:1": {
@@ -29,6 +29,6 @@
       ]
     }
   },
-  "onCreateCommand": "markitdown --version && az version && aws --version && terraform version",
+  "onCreateCommand": "pip install 'markitdown[all]' && markitdown --version && az version && aws --version && terraform version",
   "remoteUser": "vscode"
 }
